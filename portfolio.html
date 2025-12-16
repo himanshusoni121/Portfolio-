@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Himanshu Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container nav-bar">
+      <h2 class="logo">Himanshu</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero fade">
+    <div class="container">
+      <img src="profile.jpg" alt="Himanshu" class="profile-img">
+      <h1>Hi, I'm Himanshu 👋</h1>
+      <p>Computer Science Student | Python | NLP | Web Developer</p>
+      <a class="btn" href="resume.pdf" target="_blank"><i class="fas fa-download"></i> Download Resume</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a Computer Science student passionate about programming, problem solving, and building projects in Python, NLP, and Web Development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="fade">
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="skill">
+        <p>Python <span>90%</span></p>
+        <div class="skill-bar">
+          <div class="skill-level" style="width:90%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>C <span>85%</span></p>
+        <div class="skill-bar">
+          <div class="skill-level" style="width:85%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>Java <span>80%</span></p>
+        <div class="skill-bar">
+          <div class="skill-level" style="width:80%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>SQL <span>75%</span></p>
+        <div class="skill-bar">
+          <div class="skill-level" style="width:75%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>DSA <span>70%</span></p>
+        <div class="skill-bar">
+          <div class="skill-level" style="width:70%;"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <!-- Projects Section -->
+<section id="projects" class="fade">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <!-- Project 1: Omnix Bot -->
+      <div class="card">
+        <h3>Omnix Bot</h3>
+        <p>AI Chatbot built using Python and NLP. It can answer user queries, provide astrological insights, and automate responses.</p>
+        <button onclick="window.open('https://github.com/himanshusoni121/omnix-bot','_blank')">
+          <i class="fas fa-eye"></i> View Project
+        </button>
+      </div>
+
+      <!-- Project 2: Customer Segmentation -->
+      <div class="card">
+        <h3>Customer Segmentation</h3>
+        <p>Data analytics project using Python to segment customers based on purchasing behavior for targeted marketing strategies.</p>
+        <button onclick="window.open('https://github.com/himanshusoni121/customer-segmentation','_blank')">
+          <i class="fas fa-eye"></i> View Project
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:himanshusoni8279@gmail.com">himanshusoni8279@gmail.com</a></p>
+      <div class="social">
+        <a href="https://github.com/himanshusoni121" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fade-in Scroll Script -->
+  <script>
+    const faders = document.querySelectorAll('.fade');
+    const appearOptions = { threshold: 0.1 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+
+</body>
+</html>
